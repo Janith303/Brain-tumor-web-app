@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classification | AI Diagnostic Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Brain Tumor Classifier</h1>
+            <p>Upload a brain MRI scan to classify using the DenseNet121 deep learning model.</p>
+        </header>
+
+        <main class="card">
+            <!-- Upload Box -->
+            <div class="upload-container" id="dropZone">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="upload-content" id="uploadPrompt">
+                    <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                    <p>Drag & Drop your MRI scan here or <span class="browse-link">browse files</span></p>
+                    <span class="file-hint">Supports: JPG, PNG, JPEG</span>
+                </div>
+                <!-- Image Preview Area -->
+                <div class="preview-container hidden" id="previewContainer">
+                    <img id="imagePreview" alt="MRI Preview">
+                    <button type="button" id="removeBtn" title="Remove image">&times;</button>
+                </div>
+            </div>
+
+            <!-- Predict Button -->
+            <button id="predictBtn" class="btn-primary" disabled>Classify Scan</button>
+
+            <!-- Loading State -->
+            <div class="loader-container hidden" id="loader">
+                <div class="spinner"></div>
+                <p>Analyzing MRI scan with DenseNet121...</p>
+            </div>
+
+            <!-- Results Box -->
+            <div class="result-card hidden" id="resultCard">
+                <h3>Analysis Results</h3>
+                <div class="result-item">
+                    <span class="label">Prediction:</span>
+                    <span class="value" id="predictionClass">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Confidence:</span>
+                    <span class="value" id="predictionConfidence">-</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>SE4050 Group Project | Model Architecture: DenseNet121</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
