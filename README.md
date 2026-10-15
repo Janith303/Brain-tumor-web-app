@@ -1,9 +1,9 @@
 # Brain-tumor-web-app
 
-#installation command
+# installation command
 
 pip install -r requirements.txt
 
-#Run the backend
+# Run the backend
 
 python app.py
