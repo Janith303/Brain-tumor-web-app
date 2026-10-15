@@ -48,5 +48,6 @@ pip install -r requirements.txt
 ```
 * **Run the backend**
 ```text
+.\venv\Scripts\activate
 python app.py
 ```
