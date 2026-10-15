@@ -43,8 +43,10 @@ Automated analysis of brain MRI scans helps accelerate diagnosis and reduces int
 ## How to run
 
 * **Run the installation command**
-* pip install -r requirements.txt
-
+```text
+pip install -r requirements.txt
+```
 * **Run the backend**
-* python app.py
-
+```text
+python app.py
+```
