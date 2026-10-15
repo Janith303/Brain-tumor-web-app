@@ -8,6 +8,12 @@ import tensorflow as tf
 from tensorflow.keras.applications.densenet import preprocess_input
 from PIL import Image
 
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+
+print("TensorFlow version:", tf.__version__)
+print("Available GPUs:", tf.config.list_physical_devices('GPU'))
+print("Available CPUs:", tf.config.list_physical_devices('CPU'))
+
 app = Flask(__name__)
 CORS(app)  # Enables communication between frontend and backend
 
